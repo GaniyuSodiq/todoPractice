@@ -35,7 +35,35 @@
       }
     }
 
+    function toggle(position){
+      if (todos[position].completed === false){
+        todos[position].completed = true;
+      }else{
+        todos[position].completed = false;
+      }
+      displayTodos();
+    }
+
     
+    function toggleAll(){
+      var completedTodos = 0;
+      for (var i = 0; i < todos.length; i++){
+        if (todos[i].completed === false){
+          completedTodos++;
+        }
+      }
+      if (completedTodos === todos.length){
+        for (var i = 0; i < todos.length; i++){
+          todos[i].completed = true;
+        }
+      }else{
+        for (var i = 0; i < todos.length; i++){
+          todos[i].completed = false;
+      }
+      
+    }
+    displayTodos();
+  }
 
   </script>
 </body>
