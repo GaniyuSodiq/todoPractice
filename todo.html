@@ -7,6 +7,12 @@
   <title>Todo APP</title>
 </head>
 <body>
+
+    <button id="display-todos-button">Display Todos</button>
+
+    <button id="toggle-all-button">Toggle All</button>
+
+
   <script>
     var todos = [
       {todoText: 'Item 1', completed: false},
@@ -44,7 +50,7 @@
       displayTodos();
     }
 
-    
+
     function toggleAll(){
       var completedTodos = 0;
       for (var i = 0; i < todos.length; i++){
@@ -64,6 +70,15 @@
     }
     displayTodos();
   }
+
+  // document.getElementById('display-todos-button');
+  var displayTodosButton = document.getElementById('display-todos-button');
+
+  // document.getElementById("myBtn").addEventListener("click", displayDate);
+  displayTodosButton.addEventListener("click", displayTodos);
+
+  document.getElementById('toggle-all-button').addEventListener("click", toggleAll);
+
 
   </script>
 </body>
